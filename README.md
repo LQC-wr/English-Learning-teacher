@@ -34,49 +34,7 @@ An AI-powered personalized English reading application that helps advanced learn
 
 ## 🚀 Quick Start
 
-### 1. Prerequisites
-- Python 3.10+
-- Node.js 18+
-- `pip` (dependencies are managed via `requirements.txt`)
-
-### 2. Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/your-repo/faga-adaptive-english-teacher.git
-cd faga-adaptive-english-teacher
-
-# Setup Backend Environment
-cp .env.example .env
-# Edit .env and set your GEMINI_API_KEY and NEWS_API_KEY
-
-# Install backend dependencies (required)
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-
-# Install frontend dependencies
-cd frontend
-npm install
-cd ..
-```
-
-### 3. Run Application
-
-Start both Backend and Frontend with a single command:
-
-```bash
-./start_all.sh
-```
-- `start_all.sh` is for **macOS/Linux** shells.
-- On **Windows**, use `run_all.bat` (or one of the provided `.bat` launchers) instead.
-- **Backend API**: http://localhost:5000
-- **Frontend App**: http://localhost:5173
-
-## 🧩 Comprehensive Installation Guide
-
-This section covers a clean install from scratch, including system dependencies, Python/Node setup, API keys, and OS-specific steps.
-
-### ✅ Required Dependencies
+### 1. Required Dependencies
 
 **System-level dependencies**
 - **Python**: 3.10+
@@ -86,7 +44,6 @@ This section covers a clean install from scratch, including system dependencies,
 
 **Python dependencies**
 - Install from `requirements.txt` (primary runtime dependency file).
-- `requirementsci.txt` is intended for CI/testing environments only.
 
 **Frontend dependencies**
 - Installed via `npm install` in `frontend/`.
@@ -113,99 +70,28 @@ SECRET_KEY=change-me
 python -m venv .venv
 # Windows
 .venv\\Scripts\\activate
-# macOS/Linux
-source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
 > Note: even if you use `uv` to create/activate a virtual environment, install runtime dependencies from `requirements.txt`.
 
-### 💻 OS-Specific Installation Steps
+### 2. Run Application
 
-#### Windows
-1. **Install Python 3.10+** from https://www.python.org/downloads/
-2. **Install Node.js 18+** from https://nodejs.org/
-3. **Install FFmpeg**:
-   - Use `winget`:
-     ```powershell
-     winget install Gyan.FFmpeg
-     ```
-   - Or download from https://ffmpeg.org/download.html and add it to `PATH`.
-4. **Clone & setup**:
-   ```powershell
-   git clone https://github.com/your-repo/faga-adaptive-english-teacher.git
-   cd faga-adaptive-english-teacher
-   copy .env.example .env
-   ```
-5. **Install backend deps** (see venv setup above).
-6. **Install frontend deps**:
-   ```powershell
-   cd frontend
-   npm install
-   ```
-7. **Run**:
-   ```powershell
-   cd ..
-   .\\run_all.bat
-   ```
+Start both Backend and Frontend with a single command:
 
-#### macOS
-1. **Install Python 3.10+** (Homebrew recommended):
-   ```bash
-   brew install python
-   ```
-2. **Install Node.js 18+**:
-   ```bash
-   brew install node
-   ```
-3. **Install FFmpeg**:
-   ```bash
-   brew install ffmpeg
-   ```
-4. **Clone & setup**:
-   ```bash
-   git clone https://github.com/your-repo/faga-adaptive-english-teacher.git
-   cd faga-adaptive-english-teacher
-   cp .env.example .env
-   ```
-5. **Install backend deps** (see venv setup above).
-6. **Install frontend deps**:
-   ```bash
-   cd frontend
-   npm install
-   ```
-7. **Run**:
-   ```bash
-   cd ..
-   ./start_all.sh
-   ```
+- On **Windows**, use `run_all.bat` instead.
+- **Backend API**: http://localhost:5000
+- **Frontend App**: http://localhost:5173
 
-#### Linux (Ubuntu/Debian)
-1. **Install Python 3.10+ & Node.js 18+**:
-   ```bash
-   sudo apt update
-   sudo apt install -y python3 python3-venv python3-pip ffmpeg git
-   curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-   sudo apt install -y nodejs
-   ```
-2. **Clone & setup**:
-   ```bash
-   git clone https://github.com/your-repo/faga-adaptive-english-teacher.git
-   cd faga-adaptive-english-teacher
-   cp .env.example .env
-   ```
-3. **Install backend deps** (see venv setup above).
-4. **Install frontend deps**:
-   ```bash
-   cd frontend
-   npm install
-   ```
-5. **Run**:
-   ```bash
-   cd ..
-   ./start_all.sh
-   ```
+- or
+ ```bash
+./start_all.sh
+```
+
+## 🧩 Comprehensive Installation Guide
+
+This section covers a clean install from scratch, including system dependencies, Python/Node setup, API keys, and OS-specific steps.
 
 ### ✅ Verification Checklist
 After starting, verify:
@@ -215,20 +101,9 @@ After starting, verify:
 
 ## 📖 User Guide
 
-### Reading Modes
-- **Clean Mode**: Default view. Uses `ReactMarkdown` and `Tailwind Typography` to present a clean, book-like layout.
-- **Learning Mode**: Click the "Learning" toggle in the header. The app will:
-    - Highlight **Vocabulary** (Green)
-    - Highlight **Collocations** (Orange)
-    - Highlight **Sentence Patterns** (Blue)
-    - Open a sidebar analysis panel when you click any highlight.
+Please check our landing page:
 
-### Data Pipeline
-The `pipeline.py` script manages data ingestion:
-- **Fetch**: Crawls data from configured sources.
-- **Clean**: Normalizes text and calculates stats (Word count, Readability).
-- **Analyze**: Send content to Gemini LLM to extract learning points.
-- **Store**: Saves structured data to SQLite.
+https://lqc-wr.github.io/Adaptive-English-Teacher-User-Guide/#how
 
 ## 📂 Project Structure
 
